@@ -1,0 +1,260 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+US+Trad+Guides&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&display=swap');
+@font-face {
+    font-family: "montserrat-black";
+    src: url(Font/MONTSERRAT-BLACK.TTF) format('truetype');
+}
+@font-face {
+    font-family: "montserrat-thin";
+    src: url(Font/MONTSERRAT-THIN.TTF) format('truetype');
+}
+@font-face {
+    font-family: "montserrat-medium";
+    src: url(Font/MONTSERRAT-MEDIUM.TTF) format('truetype');
+}
+@font-face {
+    font-family: bodoni;
+    src: url(Font/BOD_R.TTF) format('truetype');
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#logo, #logonav{
+    height: 100px;
+    cursor: pointer;
+}
+body{
+    margin-top: 150px;
+    background-color: antiquewhite;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    padding: 0px, 50px;
+}
+main{
+    min-height: 100vh;
+    padding: 20px 100px;
+
+}
+
+
+header{
+    position: fixed;
+    top:0 ;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    background: linear-gradient(to left, #fef200, #749cc4);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+    backdrop-filter: blur(10px);
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.2);
+    font-family: "montserrat-black", sans-serif;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+ul li{
+    margin-left: 40px;
+}
+nav ul li a{
+    position: relative;
+    font-size: 1.1em;
+    color: #005cb8;
+    text-decoration: none;
+    font-weight: 500;
+}
+nav ul li a::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 2px;
+    background: #5a98f0;
+    border-radius: 4px;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease-in-out;
+}
+nav ul li a:hover::after{
+    transform: scaleX(1);
+    transform-origin: center;
+}
+
+#intro{
+    font-size: large;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+    font-family: bodoni, sans-serif;
+    font-weight: 0px ;
+   
+
+}
+#intro img{
+    margin: 20px auto;
+    width: 80%;
+    border-radius: 10px;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.45);
+    /* initial state for entrance animation */
+    opacity: 0;
+    transform: translateY(18px) scale(0.99);
+    transition: transform 300ms cubic-bezier(.2,.9,.3,1), opacity 450ms ease, box-shadow 200ms ease;
+    animation: introImageIn 700ms ease forwards 120ms;
+}
+
+#intro img:hover,
+#intro img:focus{
+    transform: translateY(0) scale(1.03);
+    box-shadow: 0 14px 30px rgba(0,0,0,0.5);
+}
+
+@keyframes introImageIn {
+    from { opacity: 0; transform: translateY(18px) scale(0.99); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Respect user's reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+    #intro img {
+        animation: none !important;
+        transition: none !important;
+        transform: none !important;
+        opacity: 1 !important;
+    }
+}
+
+#upcom-events{
+    font-size: large;
+    display: grid;
+    grid-area: side;
+    align-items: stretch;
+    align-content: space-evenly;
+    justify-items: end;
+    padding: 0px 10px;
+}
+footer{
+    font-family: montserrat-medium, sans-serif;
+    font-size: smaller;
+    padding: 20px 100px;
+}
+
+.footer-container{
+    display: grid; 
+  grid-auto-columns: 1fr; 
+  grid-template-columns: 1fr 1fr 1fr; 
+  grid-template-rows: .5fr .5fr .5fr; 
+  gap: 0px 0px; 
+  grid-template-areas: 
+    "f1 f2 f3"
+    ". . . "
+    ". . . "; 
+
+}
+.f1{
+    grid-area: f1;
+    text-align: left;
+}
+.f2{
+    grid-area: f2;
+    text-align: center;
+}
+
+.f3{
+    grid-area: f3;
+    p{text-align: right;}
+    a{
+        text-decoration: none; 
+        color:black;
+    }
+}
+
+/* ===== Mobile (700px) ===== */
+@media (max-width: 600px) {
+    body {
+        margin-top: 88px;
+        padding: 0 12px;
+    }
+    
+    main {
+        padding: 10px 12px;
+    }
+    
+    /* Stack header items and center them */
+    header {
+        padding: 10px 12px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        min-height: auto;
+        text-align: center;
+    }
+    
+    /* Center logo */
+    #logo, #logonav {
+        height: 56px;
+        margin: 0;
+    }
+    
+    /* Make nav full width and centered */
+    nav {
+        width: 100%;
+        position: relative;
+        top: 0;
+        background: transparent;
+        display: block;
+        border: none;
+    }
+    
+    nav ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 0;
+        gap: 8px;
+        margin: 0;
+        list-style: none;
+    }
+    
+    nav ul li {
+        margin: 0 6px;
+    }
+    
+    nav ul li a {
+        font-size: 0.95em;
+    }
+    
+    #intro {
+        padding: 12px;
+    }
+    
+    #intro img {
+        width: 100%;
+    }
+    
+    footer {
+        padding: 14px;
+        font-size: 0.8em;
+    }
+}
+
+
+
+
+

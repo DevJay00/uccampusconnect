@@ -1,0 +1,214 @@
+/* Resource page layout */
+.container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: .2fr .2fr;
+    grid-auto-columns: 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "subnav subnav subnav subnav"
+        "content content content content";
+}
+
+.Subnav{
+    grid-area: subnav;  
+}
+.Subnav ul{
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.Subnav ul li{
+    margin: 10px 50px;
+}
+.Subnav a{
+    text-decoration: none;
+    color: #333;
+    font-family: montserrat-medium, sans-serif;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+}
+.Subnav a:hover{
+    text-decoration: underline;
+
+}
+#study-mats{
+    background-size: cover;
+    background-color: #73aaf8;
+    border-style: solid;
+    border: black;
+}
+
+.Content{
+    grid-area: content;
+    background-color: beige;
+    border-radius: 10px 10px 10px 1px;
+    p{
+        padding: 2rem;
+        margin: auto;
+    }
+    h1, h2{
+        text-align: center;
+        font-family: montserrat-bold, sans-serif;
+        margin-top: 1rem;
+    }
+    table{
+        margin: auto;
+        border-collapse: collapse;
+    }
+}
+
+/* Table styles */
+.table_component {
+    overflow: auto;
+    width: 100%;
+    margin: 20px 0;
+}
+
+.table_component table {
+    margin: 0 auto;
+    margin-bottom: 15px;
+    font-family: montserrat-medium, sans-serif;
+    border-collapse: collapse;
+    width: 95%;
+    max-width: 800px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.table_component caption {
+    font-weight: bold;
+    font-size: 1.1em;
+    padding: 12px;
+    text-align: left;
+    background-color: #f5f5f5;
+}
+
+.table_component thead {
+    background: linear-gradient(135deg, #5a98f0 0%, #3d7bc4 100%);
+}
+
+.table_component th {
+    border: 1px solid #3d7bc4;
+    background: linear-gradient(135deg, #5a98f0 0%, #3d7bc4 100%);
+    color: #ffffff;
+    padding: 14px 16px;
+    text-align: left;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    letter-spacing: 0.5px;
+}
+
+.table_component tbody tr {
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+    border-bottom: 1px solid #dededf;
+}
+
+.table_component tbody tr:nth-child(even) {
+    background-color: #f9fafb;
+}
+
+.table_component tbody tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+.table_component tbody tr:hover {
+    background-color: #e8f1ff;
+    box-shadow: inset 0 2px 6px rgba(90, 152, 240, 0.15);
+}
+
+.table_component td {
+    border: 1px solid #dededf;
+    color: #333333;
+    padding: 14px 16px;
+    text-align: left;
+    font-size: 0.95em;
+}
+
+/* Empty cell placeholder styling */
+.table_component td:empty::before {
+    content: "–";
+    color: #bbb;
+    font-weight: normal;
+}
+
+/* Table link styling */
+.table_component td a {
+    color: #5a98f0;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease, text-decoration 0.2s ease;
+    padding: 4px 8px;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.table_component td a:hover {
+    color: #3d7bc4;
+    text-decoration: underline;
+    background-color: rgba(90, 152, 240, 0.1);
+}
+
+.table_component td a:active {
+    color: #2a5aa0;
+}
+
+
+
+
+
+
+
+
+@media (max-width: 600px) {
+    .container {
+        gap: 8px;
+    }
+    
+    .Sidebar {
+        padding: 12px;
+    }
+    
+    .Sidebar a {
+        font-size: 16px;
+        padding: 6px 0;
+        margin-bottom: 6px;
+    }
+    
+    .Content {
+        padding: 12px;
+        border-radius: 8px;
+    }
+    
+    .Content h3 {
+        font-size: 1.1em;
+    }
+}
+
+@media (max-width: 420px) {
+    .Sidebar {
+        padding: 10px;
+    }
+    
+    .Sidebar a {
+        font-size: 14px;
+        padding: 6px 6px;
+        margin-bottom: 6px;
+    }
+    
+    .Content {
+        padding: 10px;
+        border-radius: 6px;
+    }
+    
+    .Content h3 {
+        font-size: 1em;
+    }
+}
+
+

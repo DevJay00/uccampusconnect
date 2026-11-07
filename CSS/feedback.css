@@ -1,0 +1,132 @@
+*{
+    --primary-color: #4a90e2;
+    --background-bg: #f4f7f6;
+    --card-bg: #ffffff;
+    --text-color: #333;
+    --star-color-inactive: #ccc;
+    --star-color-active: #f39c12;
+}
+@font-face {
+    font-family: montserrat-medium;
+    src: url(Font/MONTSERRAT-MEDIUM.TTF) format('truetype');
+}
+
+
+.container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    font-family: "montserrat-medium", sans-serif;
+}
+
+h2 {
+    margin-top: 0;
+    color: var(--text-color);
+    text-align: center;
+}
+
+.subtitle {
+    text-align: center;
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Form Group Styling */
+.form-group {
+    margin-bottom: 1rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    box-sizing: border-box; /* Ensures padding doesn't affect width */
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+input:focus, textarea:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+/* Star Rating Styling */
+.rating-group {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.stars {
+    display: flex;
+    flex-direction: row-reverse; /* Reverse order for CSS selector logic */
+    justify-content: center;
+    gap: 5px;
+}
+
+.stars input {
+    display: none; /* Hide radio buttons */
+}
+
+.stars label {
+    font-size: 2rem;
+    color: var(--star-color-inactive);
+    cursor: pointer;
+    margin: 0;
+    transition: color 0.2s;
+}
+
+/* Highlight stars on hover and check */
+.stars label:hover,
+.stars label:hover ~ label,
+.stars input:checked ~ label {
+    color: var(--star-color-active);
+}
+
+/* Button Styling */
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #357abd;
+}
+
+/* Success/Error Message */
+#message {
+    margin-top: 1rem;
+    text-align: center;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.hidden {
+    display: none;
+}
+
+.success {
+    background-color: #d4edda;
+    color: #155724;
+    display: block;
+}

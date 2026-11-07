@@ -1,0 +1,61 @@
+/* 2. LOADER CONTAINER 
+           Covers the whole screen, white background, sits on top (z-index) */
+        #loader-wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #ffffff;
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+        }
+
+        /* 3. LOGO ANIMATION 
+           Gently pulses (scales) the logo */
+        .loader-logo {
+            width: 200px; /* Adjust size as needed */
+            height: auto;
+            margin-bottom: 30px;
+            animation: breathe 2s infinite ease-in-out;
+        }
+
+        @keyframes breathe {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.05); opacity: 0.9; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        /* 4. SPINNER RING 
+           Uses UC colors (Blue and Yellow) */
+        .loader-spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid #f3f3f3; /* Light grey track */
+            border-top: 4px solid #003399; /* UC Blue */
+            border-right: 4px solid #FFCC00; /* UC Yellow */
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* 5. HIDE CLASS 
+           Applied by JS to fade out the loader */
+        .loader-hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        /* DUMMY CONTENT (Just to show the page behind it) */
+        .content {
+            padding: 50px;
+            text-align: center;
+        }

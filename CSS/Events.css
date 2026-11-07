@@ -1,0 +1,43 @@
+
+.event-grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+.item {
+    padding:2rem;
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+.event1{
+    margin: 10px 20px;
+}
+.event2{
+    margin: 10px 20px;
+}
+.event3{
+    margin: 10px 20px;
+}
+.event1 img{
+    height: auto;
+    width: 100%;
+    border-radius: 30px;
+    
+}
+.event1 button{
+    padding: 5px;
+    border-radius: 10px;
+    border-color: #f0f0f0;
+}
+
+/* Center header and nav on narrow screens to keep layout consistent */
+@media (max-width: 600px) {
+    .event-grid-container {
+		grid-template-columns: 1fr;
+		padding: 10px;
+		gap: 15px;
+	}
+}
