@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="CSS/main.css">
+        <link rel="stylesheet" href="CSS/home.css">
+        <link rel="stylesheet" href="CSS/screenloader.css">
+        <link rel="shortcut icon" href="Pics/uc_logo.png" type="image/x-icon">
+        <title>Campus Connect</title>
+    </head>
+    <body>
+        <header>
+            <a id="logonav" href="home.html"><img id="logo" src="Pics/LOGO.png" alt="LOGO"></a>
+                <nav id="main-nav">
+                    <ul>
+                        <li><a href="home.html">HOME</a></li>
+                        <li><a href="resource.html">RESOURCES</a></li>
+                        <li><a href="Events.html">EVENTS</a></li>
+                        <li><a href="articles.html">NEWS</a></li>
+                    </ul>
+                </nav>
+        </header>
+        <div id="loader-wrapper">
+            <img src="Pics/LOGO.png" alt="University of Cebu Logo" class="loader-logo">
+            <div class="loader-spinner"></div>
+        </div>
+        <main>
+            <section id="intro">
+                <h1>Welcome</h1>
+                <img src="pics/Website-banner.png" alt="logo">
+            </section>
+            
+            <div class="container">
+                <div class="Upcoming-Events">
+                   <h2>Upcoming Events</h2>
+                   <table>
+                        <tbody>
+                            <tr>
+                                <td id="hd">UC INTRAMURALS 2025</td>
+                                <td>Aug 20-25</td>
+                                <td><a href="#">Learn more</a></td>
+                            </tr>
+                            <tr>
+                                <td id="hd">Tech Talk Series</td>
+                                <td>Sep 10</td>
+                                <td><a href="#">Learn more</a></td>
+                            </tr>
+                            <tr>
+                                <td id="hd">CCS ACQUAINTANCE PARTY</td>
+                                <td>TBA</td>
+                                <td><a href="#">Learn more</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="Announcements">
+                    <h2>Announcements</h2>
+                        <p>Campus Wi-Fi Upgrade on Aug 15</p>
+                        <p>New Library Resources Available</p>
+                        <p>Join the Student Council Elections!</p>
+                </div>
+
+                <div class="Content">
+                    <h2>Campus Connect</h2>
+                    <p>Campus Connect is your one-stop platform for all campus-related information, events, and resources. Stay connected and make the most of your campus experience!</p>
+                </div>
+            </div>
+        </main>
+        <br>
+        
+        <footer>
+            <hr>
+            <div class="footer-container">
+                <div class="f1">
+                <p> © All Rights Reserved  2025</p>
+                </div>
+                <div class="f2">
+                <p>University of Cebu Main - College of Computer Studies</p>
+                </div>
+                <div class="f3">
+                <p>For Feedbacks Click <a href="feedback.html">here</a></p>
+            </div>
+        </footer>
+
+        <script>// Wait for the entire window (images, styles, etc.) to load
+        window.addEventListener("load", function () {
+            const loader = document.getElementById("loader-wrapper");
+
+            // Optional: Add a small delay so the animation is visible 
+            // even if the site loads instantly (remove setTimeout for production if you want instant load)
+            setTimeout(function() {
+                loader.classList.add("loader-hidden");
+                
+                // Remove the loader from the DOM completely after the fade-out is done
+                loader.addEventListener("transitionend", function() {
+                    loader.remove();
+                });
+            }, 1500); // 1500ms = 1.5 seconds delay
+        });
+        </script>
+    </body>
+</html>
